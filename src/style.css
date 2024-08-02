@@ -18,26 +18,230 @@
     }
 
     h1 {
-        @apply text-[56px] leading-[64px] font-normal;
+        @apply text-[56px] font-normal leading-[64px];
     }
 
     h2 {
-        @apply text-[46px] leading-[54px] font-normal;
+        @apply text-[46px] font-normal leading-[54px];
     }
 
     h3 {
-        @apply text-[34px] leading-[44px] font-normal;
+        @apply text-[34px] font-normal leading-[44px];
     }
 
     h4 {
-        @apply text-[28px] leading-[36px] font-normal;
+        @apply text-[28px] font-normal leading-[36px];
     }
 
     h5 {
-        @apply text-[24px] leading-[32px] font-normal;
+        @apply text-[24px] font-normal leading-[32px];
     }
 
     h6 {
-        @apply text-[18px] leading-[28px] font-normal;
+        @apply text-[18px] font-normal leading-[28px];
+    }
+
+    [class^='icon-'],
+    [class*=' icon-'] {
+        /* use !important to prevent issues with browser extensions that change fonts */
+        font-family: 'icomoon' !important;
+        speak: never;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+    }
+
+    .icon-arrow-down:before {
+        content: '\e900';
+    }
+
+    .icon-arrow-left:before {
+        content: '\e901';
+    }
+
+    .icon-arrow-right:before {
+        content: '\e902';
+    }
+
+    .icon-arrow-up:before {
+        content: '\e903';
+    }
+
+    .icon-ask:before {
+        content: '\e904';
+    }
+
+    .icon-bag:before {
+        content: '\e905';
+    }
+
+    .icon-bars:before {
+        content: '\e906';
+    }
+
+    .icon-bars2:before {
+        content: '\e907';
+    }
+
+    .icon-camera:before {
+        content: '\e90c';
+    }
+
+    .icon-close:before {
+        content: '\e908';
+    }
+
+    .icon-compare:before {
+        content: '\e909';
+    }
+
+    .icon-compress:before {
+        content: '\e90a';
+    }
+
+    .icon-coupon:before {
+        content: '\e90b';
+    }
+
+    .icon-expand:before {
+        content: '\e90d';
+    }
+
+    .icon-eyes:before {
+        content: '\e90e';
+    }
+
+    .icon-eyes2:before {
+        content: '\e90f';
+    }
+
+    .icon-facebook:before {
+        content: '\e910';
+    }
+
+    .icon-fire:before {
+        content: '\e911';
+    }
+
+    .icon-home:before {
+        content: '\e912';
+    }
+
+    .icon-instagram:before {
+        content: '\e914';
+    }
+
+    .icon-load:before {
+        content: '\e915';
+    }
+
+    .icon-location:before {
+        content: '\e916';
+    }
+
+    .icon-login:before {
+        content: '\e917';
+    }
+
+    .icon-minus:before {
+        content: '\e918';
+    }
+
+    .icon-next:before {
+        content: '\e919';
+    }
+
+    .icon-note:before {
+        content: '\e91a';
+    }
+
+    .icon-pinterest:before {
+        content: '\e913';
+    }
+
+    .icon-plus:before {
+        content: '\e91c';
+    }
+
+    .icon-pointer:before {
+        content: '\e91d';
+    }
+
+    .icon-prev:before {
+        content: '\e91e';
+    }
+
+    .icon-return:before {
+        content: '\e91f';
+    }
+
+    .icon-rule:before {
+        content: '\e920';
+    }
+
+    .icon-search:before {
+        content: '\e921';
+    }
+
+    .icon-share:before {
+        content: '\e922';
+    }
+
+    .icon-ship:before {
+        content: '\e923';
+    }
+
+    .icon-shop:before {
+        content: '\e924';
+    }
+
+    .icon-square:before {
+        content: '\e926';
+    }
+
+    .icon-square-check:before {
+        content: '\e925';
+    }
+
+    .icon-star-full:before {
+        content: '\e927';
+    }
+
+    .icon-star-haft:before {
+        content: '\e928';
+    }
+
+    .icon-star-solid:before {
+        content: '\e929';
+    }
+
+    .icon-tiktok:before {
+        content: '\e92a';
+    }
+
+    .icon-trash:before {
+        content: '\e92b';
+    }
+
+    .icon-tumblr:before {
+        content: '\e92d';
+    }
+
+    .icon-twitter:before {
+        content: '\e92c';
+    }
+
+    .icon-video:before {
+        content: '\e92e';
+    }
+
+    .icon-vimeo:before {
+        content: '\e92f';
+    }
+
+    .icon-wishlist:before {
+        content: '\e930';
     }
 }
