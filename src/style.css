@@ -14,6 +14,30 @@
     }
 
     body {
-        @apply font-primary;
+        @apply font-primary text-primary-dark;
+    }
+
+    h1 {
+        @apply text-[56px] leading-[64px] font-normal;
+    }
+
+    h2 {
+        @apply text-[46px] leading-[54px] font-normal;
+    }
+
+    h3 {
+        @apply text-[34px] leading-[44px] font-normal;
+    }
+
+    h4 {
+        @apply text-[28px] leading-[36px] font-normal;
+    }
+
+    h5 {
+        @apply text-[24px] leading-[32px] font-normal;
+    }
+
+    h6 {
+        @apply text-[18px] leading-[28px] font-normal;
     }
 }
