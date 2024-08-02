@@ -6,7 +6,8 @@
 
 ## 🚀 Technologies
 
-{{ technologies }}
+| ![Vite](public/vite.svg) | ![Tailwind](public/tailwind.svg) | ![Typescript](public/typescript.svg) | ![Prettier](public/prettier.svg) |
+|--------------------------|----------------------------------|--------------------------------------|----------------------------------|
 
 ## 📦 Installation
 
