@@ -18,27 +18,27 @@
     }
 
     h1 {
-        @apply text-[56px] font-normal leading-[64px];
+        @apply text-[56px]/[64px] font-normal;
     }
 
     h2 {
-        @apply text-[46px] font-normal leading-[54px];
+        @apply text-[46px]/[54px] font-normal;
     }
 
     h3 {
-        @apply text-[34px] font-normal leading-[44px];
+        @apply text-[34px]/[44px] font-normal;
     }
 
     h4 {
-        @apply text-[28px] font-normal leading-[36px];
+        @apply text-[28px]/[36px] font-normal;
     }
 
     h5 {
-        @apply text-[24px] font-normal leading-[32px];
+        @apply text-[24px]/[32px] font-normal;
     }
 
     h6 {
-        @apply text-[18px] font-normal leading-[28px];
+        @apply text-[18px]/[28px] font-normal;
     }
 
     a {
@@ -251,6 +251,12 @@
 
     .icon-wishlist:before {
         content: '\e930';
+    }
+}
+
+@layer components {
+    .button-primary {
+        @apply rounded bg-white px-7 py-[9px] font-medium text-primary-dark transition-colors duration-300 ease-in-out hover:bg-primary-navy hover:text-white
     }
 }
 

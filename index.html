@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <meta content="E-commerce landing page" name="description" />
         <title>E-commerce landing page</title>
         <link
             as="font"
@@ -40,30 +41,26 @@
             type="font/woff"
         />
         <link href="./src/style.css" rel="stylesheet" />
+        <!-- Preload the LCP image with a high fetchpriority so it starts loading with the stylesheet. -->
+        <link
+            as="image"
+            fetchpriority="high"
+            href="./src/assets/images/hero-slider/hero-image-1.webp"
+            rel="preload"
+            type="image/webp"
+        />
     </head>
     <body class="pt-[100px]">
         <!-- Header -->
         <header class="fixed left-0 top-0 z-10 w-full bg-white">
-            <div class="container m-auto flex items-center py-[36px]">
-                <button
-                    class="hover:text-primary-navy"
-                    aria-label="Open menu panel"
-                >
-                    <span
-                        class="icon-bars2 block h-[26px] w-[26px] text-[26px] md:hidden"
-                    ></span>
+            <div class="container m-auto flex items-center py-9">
+                <button aria-label="Open menu panel" class="hover:text-primary-navy">
+                    <span class="icon-bars2 block h-[26px] w-[26px] text-[26px] md:hidden"></span>
                 </button>
                 <a class="mx-auto shrink-0 md:mx-0" href="/">
-                    <img
-                        alt="Logo"
-                        height="26"
-                        src="./src/assets/images/logo.svg"
-                        width="85"
-                    />
+                    <img alt="Logo" height="26" src="./src/assets/images/logo.svg" width="85" />
                 </a>
-                <ul
-                    class="mx-auto hidden gap-4 text-[17px] leading-6 md:flex lg:gap-8"
-                >
+                <ul class="mx-auto hidden gap-4 text-[17px] leading-6 md:flex lg:gap-8">
                     <li>
                         <a class="block" href="/">Home</a>
                     </li>
@@ -83,38 +80,30 @@
                         <a class="block" href="/styleguide">Elements</a>
                     </li>
                 </ul>
-                <div class="flex items-center gap-[8px] md:gap-6">
+                <div class="flex items-center gap-2 md:gap-1.5">
                     <button
-                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
                         aria-label="Open search panel"
+                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
                     >
-                        <span
-                            class="icon-search block text-[28px] leading-[28px]"
-                        ></span>
+                        <span class="icon-search block text-[28px] leading-[28px]"></span>
                     </button>
                     <button
-                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
                         aria-label="Show login popup"
+                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
                     >
-                        <span
-                            class="icon-login block text-[28px] leading-[28px]"
-                        ></span>
+                        <span class="icon-login block text-[28px] leading-[28px]"></span>
                     </button>
                     <button
-                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
                         aria-label="Open wishlist panel"
+                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
                     >
-                        <span
-                            class="icon-wishlist block text-[28px] leading-[28px]"
-                        ></span>
+                        <span class="icon-wishlist block text-[28px] leading-[28px]"></span>
                     </button>
                     <button
-                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
                         aria-label="Open cart panel"
+                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
                     >
-                        <span
-                            class="icon-bag block text-[28px] leading-[28px]"
-                        ></span>
+                        <span class="icon-bag block text-[28px] leading-[28px]"></span>
                     </button>
                 </div>
             </div>
@@ -123,49 +112,39 @@
             <!-- Delivery block -->
             <div class="bg-shadesOfGray-200 py-6">
                 <div class="container mx-auto">
-                    <ul
-                        class="space-y-6 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-4"
-                    >
+                    <ul class="space-y-6 sm:grid sm:grid-cols-2 sm:gap-6 sm:space-y-0 lg:grid-cols-4">
                         <li class="flex w-full items-center gap-6">
                             <svg
-                                width="36"
+                                fill="none"
                                 height="36"
                                 viewBox="0 0 36 36"
-                                fill="none"
+                                width="36"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
-                                <mask
-                                    id="path-1-inside-1_871_14130"
-                                    fill="white"
-                                >
+                                <mask fill="white" id="path-1-inside-1_871_14130">
                                     <path
                                         d="M2.3998 34.8C3.20459 34.8 3.5708 35.0256 4.03428 35.3109C4.55898 35.6338 5.15371 36 6.29834 36C7.44268 36 8.0374 35.6338 8.56211 35.3109C8.84695 35.1356 9.09583 34.9834 9.43154 34.8916L9.43604 34.8911L9.43978 34.889C9.6484 34.8329 9.89061 34.8 10.1966 34.8C11.0014 34.8 11.3679 35.0256 11.8313 35.3109C12.3561 35.6341 12.9508 36 14.0951 36C15.2397 36 15.8345 35.6341 16.3592 35.3109C16.8232 35.0256 17.1897 34.8 17.9948 34.8C18.799 34.8 19.1652 35.0256 19.6287 35.3109C20.1534 35.6338 20.7479 36 21.8922 36C23.0371 36 23.6321 35.6341 24.1568 35.3109C24.6209 35.0256 24.9874 34.8 25.7928 34.8C26.599 34.8 26.9658 35.0256 27.4302 35.3112C27.9555 35.6341 28.5508 36 29.6963 36C30.8418 36 31.4371 35.6341 31.9624 35.3112C32.4268 35.0256 32.7936 34.8 33.5998 34.8C33.9312 34.8 34.1998 34.5314 34.1998 34.2C34.1998 33.8687 33.9312 33.6 33.5998 33.6C32.4543 33.6 31.859 33.9659 31.3337 34.2888C30.8693 34.5744 30.5025 34.8 29.6963 34.8C28.89 34.8 28.5232 34.5744 28.0589 34.2888C27.8842 34.1814 27.6995 34.0703 27.4917 33.9684L32.9708 16.9843C33.0218 16.8261 33.0051 16.6541 32.9242 16.5088C32.8436 16.3635 32.7065 16.2583 32.5454 16.2179L29.3998 15.4315V9C29.3998 8.66865 29.1312 8.4 28.7998 8.4H25.7998V4.2C25.7998 3.86865 25.5312 3.6 25.1998 3.6H23.3998V0.6C23.3998 0.26865 23.1312 0 22.7998 0H13.1998C12.8685 0 12.5998 0.26865 12.5998 0.6V3.6H10.7998C10.4685 3.6 10.1998 3.86865 10.1998 4.2V8.4H7.1998C6.86845 8.4 6.5998 8.66865 6.5998 9V15.4315L3.4542 16.2179C3.29307 16.2583 3.15595 16.3635 3.07539 16.5088C2.99452 16.6541 2.97783 16.8261 3.0288 16.9843L8.50673 33.9649C8.29605 34.0678 8.10936 34.1804 7.93281 34.2891C7.46934 34.5744 7.10313 34.8 6.29834 34.8C5.49355 34.8 5.12705 34.5744 4.66357 34.2891C4.13887 33.9659 3.54414 33.6 2.3998 33.6C2.06845 33.6 1.7998 33.8687 1.7998 34.2C1.7998 34.5314 2.06845 34.8 2.3998 34.8ZM13.7998 1.2H22.1998V3.6H13.7998V1.2ZM11.3998 4.8H24.5998V8.4H11.3998V4.8ZM7.7998 9.6H28.1998V15.1315L18.1454 12.6179C18.0499 12.5939 17.9497 12.5939 17.8542 12.6179L7.7998 15.1315V9.6ZM4.36797 17.2266L17.3998 13.9685V25.2C17.3998 25.5314 17.6685 25.8 17.9998 25.8C18.3312 25.8 18.5998 25.5314 18.5998 25.2V13.9685L31.6316 17.2266L26.3386 33.6344C26.1699 33.6144 25.9923 33.6 25.7928 33.6C24.6479 33.6 24.0528 33.9659 23.5281 34.2891C23.0641 34.5744 22.6976 34.8 21.8922 34.8C21.0877 34.8 20.7215 34.5744 20.258 34.2891C19.7336 33.9662 19.1389 33.6 17.9948 33.6C16.8499 33.6 16.2552 33.9662 15.7305 34.2891C15.2664 34.5744 14.9002 34.8 14.0951 34.8C13.2903 34.8 12.9241 34.5744 12.4606 34.2891C11.9359 33.9662 11.3412 33.6 10.1966 33.6C10.001 33.6 9.82649 33.6139 9.66063 33.6332L4.36797 17.2266Z"
                                     />
                                 </mask>
                                 <path
                                     d="M2.3998 34.8C3.20459 34.8 3.5708 35.0256 4.03428 35.3109C4.55898 35.6338 5.15371 36 6.29834 36C7.44268 36 8.0374 35.6338 8.56211 35.3109C8.84695 35.1356 9.09583 34.9834 9.43154 34.8916L9.43604 34.8911L9.43978 34.889C9.6484 34.8329 9.89061 34.8 10.1966 34.8C11.0014 34.8 11.3679 35.0256 11.8313 35.3109C12.3561 35.6341 12.9508 36 14.0951 36C15.2397 36 15.8345 35.6341 16.3592 35.3109C16.8232 35.0256 17.1897 34.8 17.9948 34.8C18.799 34.8 19.1652 35.0256 19.6287 35.3109C20.1534 35.6338 20.7479 36 21.8922 36C23.0371 36 23.6321 35.6341 24.1568 35.3109C24.6209 35.0256 24.9874 34.8 25.7928 34.8C26.599 34.8 26.9658 35.0256 27.4302 35.3112C27.9555 35.6341 28.5508 36 29.6963 36C30.8418 36 31.4371 35.6341 31.9624 35.3112C32.4268 35.0256 32.7936 34.8 33.5998 34.8C33.9312 34.8 34.1998 34.5314 34.1998 34.2C34.1998 33.8687 33.9312 33.6 33.5998 33.6C32.4543 33.6 31.859 33.9659 31.3337 34.2888C30.8693 34.5744 30.5025 34.8 29.6963 34.8C28.89 34.8 28.5232 34.5744 28.0589 34.2888C27.8842 34.1814 27.6995 34.0703 27.4917 33.9684L32.9708 16.9843C33.0218 16.8261 33.0051 16.6541 32.9242 16.5088C32.8436 16.3635 32.7065 16.2583 32.5454 16.2179L29.3998 15.4315V9C29.3998 8.66865 29.1312 8.4 28.7998 8.4H25.7998V4.2C25.7998 3.86865 25.5312 3.6 25.1998 3.6H23.3998V0.6C23.3998 0.26865 23.1312 0 22.7998 0H13.1998C12.8685 0 12.5998 0.26865 12.5998 0.6V3.6H10.7998C10.4685 3.6 10.1998 3.86865 10.1998 4.2V8.4H7.1998C6.86845 8.4 6.5998 8.66865 6.5998 9V15.4315L3.4542 16.2179C3.29307 16.2583 3.15595 16.3635 3.07539 16.5088C2.99452 16.6541 2.97783 16.8261 3.0288 16.9843L8.50673 33.9649C8.29605 34.0678 8.10936 34.1804 7.93281 34.2891C7.46934 34.5744 7.10313 34.8 6.29834 34.8C5.49355 34.8 5.12705 34.5744 4.66357 34.2891C4.13887 33.9659 3.54414 33.6 2.3998 33.6C2.06845 33.6 1.7998 33.8687 1.7998 34.2C1.7998 34.5314 2.06845 34.8 2.3998 34.8ZM13.7998 1.2H22.1998V3.6H13.7998V1.2ZM11.3998 4.8H24.5998V8.4H11.3998V4.8ZM7.7998 9.6H28.1998V15.1315L18.1454 12.6179C18.0499 12.5939 17.9497 12.5939 17.8542 12.6179L7.7998 15.1315V9.6ZM4.36797 17.2266L17.3998 13.9685V25.2C17.3998 25.5314 17.6685 25.8 17.9998 25.8C18.3312 25.8 18.5998 25.5314 18.5998 25.2V13.9685L31.6316 17.2266L26.3386 33.6344C26.1699 33.6144 25.9923 33.6 25.7928 33.6C24.6479 33.6 24.0528 33.9659 23.5281 34.2891C23.0641 34.5744 22.6976 34.8 21.8922 34.8C21.0877 34.8 20.7215 34.5744 20.258 34.2891C19.7336 33.9662 19.1389 33.6 17.9948 33.6C16.8499 33.6 16.2552 33.9662 15.7305 34.2891C15.2664 34.5744 14.9002 34.8 14.0951 34.8C13.2903 34.8 12.9241 34.5744 12.4606 34.2891C11.9359 33.9662 11.3412 33.6 10.1966 33.6C10.001 33.6 9.82649 33.6139 9.66063 33.6332L4.36797 17.2266Z"
+                                    mask="url(#path-1-inside-1_871_14130)"
                                     stroke="#111111"
                                     stroke-width="2.4"
-                                    mask="url(#path-1-inside-1_871_14130)"
                                 />
                             </svg>
-                            <span class="text-[18px] font-medium leading-[28px]"
-                                >Shipping Worldwide</span
-                            >
+                            <span class="text-[18px] font-medium leading-[28px]">Shipping Worldwide</span>
                         </li>
                         <li class="flex w-full items-center gap-6">
                             <svg
-                                width="36"
+                                fill="none"
                                 height="36"
                                 viewBox="0 0 36 36"
-                                fill="none"
+                                width="36"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <g clip-path="url(#clip0_871_14133)">
-                                    <mask
-                                        id="path-1-inside-1_871_14133"
-                                        fill="white"
-                                    >
+                                    <mask fill="white" id="path-1-inside-1_871_14133">
                                         <path
                                             d="M27 17.3999C22.0374 17.3999 18 21.4373 18 26.3999C18 31.3625 22.0374 35.3999 27 35.3999C31.9626 35.3999 36 31.3625 36 26.3999C36 21.4373 31.9626 17.3999 27 17.3999ZM27 34.1999C22.6989 34.1999 19.2 30.701 19.2 26.3999C19.2 22.0988 22.6989 18.5999 27 18.5999C31.3011 18.5999 34.8 22.0988 34.8 26.3999C34.8 30.701 31.3011 34.1999 27 34.1999Z"
                                         />
@@ -175,10 +154,7 @@
                                         fill="#111111"
                                         mask="url(#path-1-inside-1_871_14133)"
                                     />
-                                    <mask
-                                        id="path-3-inside-2_871_14133"
-                                        fill="white"
-                                    >
+                                    <mask fill="white" id="path-3-inside-2_871_14133">
                                         <path
                                             d="M0.375294 29.0563L15.9663 35.3527C15.9664 35.3527 15.9666 35.3527 15.9667 35.3528L15.9753 35.3563C16.0474 35.3853 16.1238 35.4 16.2 35.4C16.2762 35.4 16.3523 35.3853 16.4244 35.3563L16.4327 35.3529C16.4332 35.3527 16.4336 35.3526 16.4341 35.3524L19.8445 33.9764C20.1519 33.8525 20.3004 33.503 20.1765 33.1957C20.0528 32.8886 19.7036 32.7395 19.3957 32.8637L16.8 33.9108V14.2047L31.2 8.38937V17.4058C31.2 17.7372 31.4686 18.0058 31.8 18.0058C32.1313 18.0058 32.4 17.7372 32.4 17.4058V7.49995C32.4 7.42616 32.3827 7.35651 32.3576 7.29004C32.3499 7.26976 32.3399 7.25199 32.3302 7.2328C32.3074 7.18773 32.2798 7.14678 32.2465 7.10877C32.2323 7.09251 32.2195 7.07643 32.2037 7.06182C32.1596 7.02113 32.1099 6.98733 32.054 6.96093C32.0452 6.95675 32.0383 6.95001 32.0292 6.94624C32.0276 6.94558 32.0264 6.94426 32.0247 6.9436L16.4247 0.643604C16.2806 0.585596 16.1194 0.585596 15.9753 0.643604L0.375294 6.9436C0.373644 6.94426 0.372438 6.94558 0.370824 6.94624C0.361704 6.95001 0.354822 6.95675 0.345924 6.96096C0.290184 6.98733 0.240456 7.02117 0.196398 7.06178C0.180468 7.07643 0.167688 7.09251 0.153402 7.1088C0.120186 7.14674 0.092646 7.18765 0.069906 7.23269C0.060162 7.25191 0.050022 7.26979 0.042366 7.29015C0.017286 7.35658 0 7.4262 0 7.49995V28.5C0 28.5015 0.00084 28.5027 0.00084 28.5042C0.00135 28.5745 0.01776 28.6424 0.041892 28.7073C0.045006 28.7158 0.044052 28.7258 0.047568 28.7341C0.072984 28.794 0.112866 28.8467 0.156624 28.8959C0.164244 28.9044 0.167682 28.9162 0.175776 28.9242C0.184746 28.9333 0.198336 28.9375 0.20793 28.9459C0.257112 28.9891 0.310032 29.0284 0.371514 29.0538C0.372984 29.0544 0.37383 29.0557 0.375294 29.0563ZM15.6 33.9105L1.2 28.0952V8.38937L15.6 14.2047V33.9105ZM16.2 1.84712L30.1978 7.49995L24 10.0029L10.0024 4.34995L16.2 1.84712ZM8.4 4.99705L22.3976 10.65L16.2 13.1528L2.20225 7.49995L8.4 4.99705Z"
                                         />
@@ -196,30 +172,21 @@
                                 </g>
                                 <defs>
                                     <clipPath id="clip0_871_14133">
-                                        <rect
-                                            width="36"
-                                            height="36"
-                                            fill="white"
-                                        />
+                                        <rect fill="white" height="36" width="36" />
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <span class="text-[18px] font-medium leading-[28px]"
-                                >60 - Days Returns</span
-                            >
+                            <span class="text-[18px] font-medium leading-[28px]">60 - Days Returns</span>
                         </li>
                         <li class="flex w-full items-center gap-6">
                             <svg
-                                width="36"
+                                fill="none"
                                 height="36"
                                 viewBox="0 0 36 36"
-                                fill="none"
+                                width="36"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
-                                <mask
-                                    id="path-1-inside-1_871_14143"
-                                    fill="white"
-                                >
+                                <mask fill="white" id="path-1-inside-1_871_14143">
                                     <path
                                         d="M33.2172 1.97266H2.78278C1.24838 1.97266 0 3.22103 0 4.75543V22.7907C0 24.3251 1.24838 25.5734 2.78278 25.5734H15.182C15.4738 25.5734 15.7104 25.3369 15.7104 25.0451C15.7104 24.7533 15.4738 24.5167 15.182 24.5167H2.78278C1.83107 24.5167 1.05675 23.7424 1.05675 22.7907V4.75543C1.05675 3.80372 1.83107 3.02941 2.78278 3.02941H33.2172C34.1689 3.02941 34.9432 3.80372 34.9432 4.75543V22.7907C34.9432 23.0825 35.1798 23.319 35.4716 23.319C35.7634 23.319 36 23.0825 36 22.7907V4.75543C36 3.22103 34.7516 1.97266 33.2172 1.97266Z"
                                     />
@@ -229,10 +196,7 @@
                                     fill="#111111"
                                     mask="url(#path-1-inside-1_871_14143)"
                                 />
-                                <mask
-                                    id="path-3-inside-2_871_14143"
-                                    fill="white"
-                                >
+                                <mask fill="white" id="path-3-inside-2_871_14143">
                                     <path
                                         d="M3.94531 17.7181C3.94531 18.0099 4.18188 18.2465 4.47369 18.2465C4.76549 18.2465 5.00206 18.0099 5.00206 17.7181V16.5909C5.00206 16.2991 4.76549 16.0625 4.47369 16.0625C4.18188 16.0625 3.94531 16.2991 3.94531 16.5909V17.7181Z"
                                     />
@@ -242,10 +206,7 @@
                                     fill="#111111"
                                     mask="url(#path-3-inside-2_871_14143)"
                                 />
-                                <mask
-                                    id="path-5-inside-3_871_14143"
-                                    fill="white"
-                                >
+                                <mask fill="white" id="path-5-inside-3_871_14143">
                                     <path
                                         d="M7.32666 16.5909V17.7181C7.32666 18.0099 7.56323 18.2465 7.85504 18.2465C8.14684 18.2465 8.38341 18.0099 8.38341 17.7181V16.5909C8.38341 16.2991 8.14684 16.0625 7.85504 16.0625C7.56323 16.0625 7.32666 16.2991 7.32666 16.5909Z"
                                     />
@@ -255,10 +216,7 @@
                                     fill="#111111"
                                     mask="url(#path-5-inside-3_871_14143)"
                                 />
-                                <mask
-                                    id="path-7-inside-4_871_14143"
-                                    fill="white"
-                                >
+                                <mask fill="white" id="path-7-inside-4_871_14143">
                                     <path
                                         d="M12.3287 17.7181V16.5909C12.3287 16.2991 12.0922 16.0625 11.8003 16.0625C11.5085 16.0625 11.272 16.2991 11.272 16.5909V17.7181C11.272 18.0099 11.5085 18.2465 11.8003 18.2465C12.0922 18.2465 12.3287 18.0099 12.3287 17.7181Z"
                                     />
@@ -268,10 +226,7 @@
                                     fill="#111111"
                                     mask="url(#path-7-inside-4_871_14143)"
                                 />
-                                <mask
-                                    id="path-9-inside-5_871_14143"
-                                    fill="white"
-                                >
+                                <mask fill="white" id="path-9-inside-5_871_14143">
                                     <path
                                         d="M15.1822 16.0625C14.8904 16.0625 14.6538 16.2991 14.6538 16.5909V17.7181C14.6538 18.0099 14.8904 18.2465 15.1822 18.2465C15.474 18.2465 15.7106 18.0099 15.7106 17.7181V16.5909C15.7106 16.2991 15.474 16.0625 15.1822 16.0625Z"
                                     />
@@ -281,10 +236,7 @@
                                     fill="#111111"
                                     mask="url(#path-9-inside-5_871_14143)"
                                 />
-                                <mask
-                                    id="path-11-inside-6_871_14143"
-                                    fill="white"
-                                >
+                                <mask fill="white" id="path-11-inside-6_871_14143">
                                     <path
                                         d="M26.2718 11.6124C27.8062 11.6124 29.0546 10.3641 29.0546 8.82965C29.0546 7.29525 27.8062 6.04688 26.2718 6.04688H22.8902C21.3558 6.04688 20.1074 7.29525 20.1074 8.82965C20.1074 10.3641 21.3558 11.6124 22.8902 11.6124H26.2718ZM21.1642 8.82965C21.1642 7.87794 21.9385 7.10363 22.8902 7.10363H26.2718C27.2235 7.10363 27.9978 7.87794 27.9978 8.82965C27.9978 9.78136 27.2235 10.5557 26.2718 10.5557H22.8902C21.9385 10.5557 21.1642 9.78136 21.1642 8.82965Z"
                                     />
@@ -294,10 +246,7 @@
                                     fill="#111111"
                                     mask="url(#path-11-inside-6_871_14143)"
                                 />
-                                <mask
-                                    id="path-13-inside-7_871_14143"
-                                    fill="white"
-                                >
+                                <mask fill="white" id="path-13-inside-7_871_14143">
                                     <path
                                         d="M33.3781 19.3703C33.258 19.2872 33.1088 19.2577 32.9661 19.2883C32.4859 19.3919 32.0016 19.4444 31.5265 19.4444C29.1805 19.4444 27.03 18.2528 25.7741 16.2568C25.6774 16.103 25.5085 16.0098 25.3269 16.0098C25.1453 16.0098 24.9764 16.103 24.8797 16.2568C23.6239 18.2528 21.4734 19.4444 19.1274 19.4444C18.6524 19.4444 18.1681 19.3919 17.6878 19.2883C17.5452 19.2576 17.3959 19.2872 17.2758 19.3703C17.1557 19.4534 17.0753 19.5825 17.0538 19.7269C16.9572 20.3751 16.9082 21.0267 16.9082 21.6636C16.9082 27.202 20.3779 32.3902 25.1583 34C25.213 34.0184 25.27 34.0276 25.327 34.0276C25.384 34.0276 25.4409 34.0184 25.4956 34C30.2761 32.3902 33.7458 27.202 33.7458 21.6636C33.7458 21.0267 33.6968 20.3751 33.6002 19.7269C33.5786 19.5824 33.4982 19.4534 33.3781 19.3703ZM20.0962 28.6758C18.7219 26.601 17.965 24.1107 17.965 21.6636C17.965 21.2549 17.987 20.8394 18.0306 20.4225C18.3974 20.4748 18.7645 20.5012 19.1274 20.5012C21.303 20.5012 23.3321 19.6146 24.7986 18.0736V32.7303C22.9697 31.9399 21.3195 30.5226 20.0962 28.6758ZM30.5578 28.6758C29.3345 30.5226 27.6843 31.9399 25.8554 32.7304V18.0736C27.3219 19.6146 29.351 20.5012 31.5266 20.5012C31.8895 20.5012 32.2566 20.4748 32.6234 20.4225C32.667 20.8394 32.689 21.2549 32.689 21.6636C32.689 24.1107 31.9321 26.601 30.5578 28.6758Z"
                                     />
@@ -308,78 +257,126 @@
                                     mask="url(#path-13-inside-7_871_14143)"
                                 />
                             </svg>
-                            <span class="text-[18px] font-medium leading-[28px]"
-                                >Security Payment</span
-                            >
+                            <span class="text-[18px] font-medium leading-[28px]">Security Payment</span>
                         </li>
                         <li class="flex w-full items-center gap-6">
                             <svg
-                                width="36"
+                                fill="none"
                                 height="36"
                                 viewBox="0 0 36 36"
-                                fill="none"
+                                width="36"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
                                 <g clip-path="url(#clip0_871_14156)">
                                     <path
                                         d="M11.25 35.4375C13.114 35.4375 14.625 33.9265 14.625 32.0625C14.625 30.1985 13.114 28.6875 11.25 28.6875C9.38604 28.6875 7.875 30.1985 7.875 32.0625C7.875 33.9265 9.38604 35.4375 11.25 35.4375Z"
                                         stroke="#111111"
-                                        stroke-width="1.2"
                                         stroke-miterlimit="10"
+                                        stroke-width="1.2"
                                     />
                                     <path
                                         d="M24.75 35.4375C26.614 35.4375 28.125 33.9265 28.125 32.0625C28.125 30.1985 26.614 28.6875 24.75 28.6875C22.886 28.6875 21.375 30.1985 21.375 32.0625C21.375 33.9265 22.886 35.4375 24.75 35.4375Z"
                                         stroke="#111111"
-                                        stroke-width="1.2"
                                         stroke-miterlimit="10"
+                                        stroke-width="1.2"
                                     />
                                     <path
                                         d="M14.625 32.0625H21.375"
                                         stroke="#111111"
-                                        stroke-width="1.2"
                                         stroke-miterlimit="10"
+                                        stroke-width="1.2"
                                     />
                                     <path
                                         d="M7.875 32.0625L5.625 1.125H0"
                                         stroke="#111111"
-                                        stroke-width="1.2"
                                         stroke-miterlimit="10"
+                                        stroke-width="1.2"
                                     />
                                     <path
                                         d="M7.3125 24.1875L31.5 22.5L35.4375 5.625H6.1875"
                                         stroke="#111111"
-                                        stroke-width="1.2"
                                         stroke-miterlimit="10"
+                                        stroke-width="1.2"
                                     />
                                     <path
                                         d="M18.5625 16.3125C20.4265 16.3125 21.9375 14.8015 21.9375 12.9375C21.9375 11.0735 20.4265 9.5625 18.5625 9.5625C16.6985 9.5625 15.1875 11.0735 15.1875 12.9375C15.1875 14.8015 16.6985 16.3125 18.5625 16.3125Z"
                                         stroke="#111111"
-                                        stroke-width="1.2"
                                         stroke-miterlimit="10"
+                                        stroke-width="1.2"
                                     />
                                     <path
                                         d="M20.8125 15.1875L25.3125 19.6875"
                                         stroke="#111111"
-                                        stroke-width="1.2"
                                         stroke-miterlimit="10"
+                                        stroke-width="1.2"
                                     />
                                 </g>
                                 <defs>
                                     <clipPath id="clip0_871_14156">
-                                        <rect
-                                            width="36"
-                                            height="36"
-                                            fill="white"
-                                        />
+                                        <rect fill="white" height="36" width="36" />
                                     </clipPath>
                                 </defs>
                             </svg>
-                            <span class="text-[18px] font-medium leading-[28px]"
-                                >Order Tracking</span
-                            >
+                            <span class="text-[18px] font-medium leading-[28px]">Order Tracking</span>
                         </li>
                     </ul>
                 </div>
+            </div>
+            <!-- Hero slider -->
+            <div class="relative h-[400px] overflow-hidden bg-shadesOfGray-100 md:h-[700px]">
+                <!-- Swiper -->
+                <div class="swiper hero-slider js-hero-slider h-full">
+                    <div class="swiper-wrapper h-full">
+                        <div class="swiper-slide relative h-full">
+                            <picture class="block h-full w-full">
+                                <source srcset="./src/assets/images/hero-slider/hero-image-1.webp" type="image/webp" />
+                                <source srcset="./src/assets/images/hero-slider/hero-image-1.jpg" type="image/jpeg" />
+                                <img
+                                    alt=""
+                                    class="absolute inset-0 h-full w-full object-cover"
+                                    src="./src/assets/images/hero-slider/hero-image-1.jpg"
+                                />
+                            </picture>
+                            <div
+                                class="absolute bottom-1/2 left-0 right-0 z-10 translate-y-1/2 px-8 text-center text-white md:bottom-40 md:left-1/2 md:right-auto md:w-96 md:-translate-x-1/2 md:px-0"
+                            >
+                                <h2 class="font-secondary mb-2 text-3xl md:text-[46px]/[54px]">New Backpack</h2>
+                                <p class="mb-6 text-[17px]">For Urban Outdoors</p>
+                                <button aria-label="Shop New Backpack" class="button-primary">Shop all</button>
+                            </div>
+                        </div>
+                        <div class="swiper-slide relative h-full">
+                            <picture class="block h-full w-full">
+                                <source srcset="./src/assets/images/hero-slider/hero-image-2.webp" type="image/webp" />
+                                <source srcset="./src/assets/images/hero-slider/hero-image-2.jpg" type="image/jpeg" />
+                                <img
+                                    alt=""
+                                    class="absolute inset-0 h-full w-full object-cover"
+                                    src="./src/assets/images/hero-slider/hero-image-2.jpg"
+                                />
+                            </picture>
+                            <div
+                                class="absolute bottom-1/2 left-0 right-0 z-10 translate-y-1/2 px-8 text-center text-white md:bottom-40 md:left-1/2 md:right-auto md:w-96 md:-translate-x-1/2 md:px-0"
+                            >
+                                <h2 class="font-secondary mb-2 text-3xl md:text-[46px]/[54px]">New Backpack</h2>
+                                <p class="mb-6 text-[17px]">For Urban Outdoors</p>
+                                <button aria-label="Shop New Backpack" class="button-primary">Shop all</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="swiper-pagination l-0 absolute bottom-6 z-10 flex w-full justify-center space-x-4"
+                    ></div>
+                    <div class="swiper-button-prev absolute left-0 top-1/2 z-10 -translate-y-1/2 text-white md:!hidden">
+                        <span class="icon-arrow-left block text-6xl"></span>
+                    </div>
+                    <div
+                        class="swiper-button-next absolute right-0 top-1/2 z-10 -translate-y-1/2 text-white md:!hidden"
+                    >
+                        <span class="icon-arrow-right block text-6xl"></span>
+                    </div>
+                </div>
+                <!--/ Swiper -->
             </div>
         </main>
         <!-- Script -->
