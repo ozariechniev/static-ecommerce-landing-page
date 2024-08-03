@@ -35,25 +35,83 @@
         <link
             as="font"
             crossorigin="anonymous"
-            href="./src/assets/fonts/icons/icomoon.ttf"
-            rel="preload"
-            type="font/ttf"
-        />
-        <link
-            as="font"
-            crossorigin="anonymous"
             href="./src/assets/fonts/icons/icomoon.woff"
             rel="preload"
             type="font/woff"
         />
         <link href="./src/style.css" rel="stylesheet" />
     </head>
-    <body>
-        <div class="container m-auto" id="app">
-            <h1 class="border-b py-3 text-center text-3xl font-bold">
-                E-commerce landing page
-            </h1>
-        </div>
+    <body class="pt-[100px]">
+        <!-- Header -->
+        <header class="fixed left-0 top-0 z-10 w-full bg-white">
+            <div class="container m-auto flex items-center py-[36px]">
+                <button class="hover:text-primary-navy">
+                    <span
+                        class="icon-bars2 block h-[26px] w-[26px] text-[26px] md:hidden"
+                    ></span>
+                </button>
+                <a class="mx-auto shrink-0 md:mx-0" href="/">
+                    <img
+                        alt="Logo"
+                        height="26"
+                        src="./src/assets/images/logo.svg"
+                        width="85"
+                    />
+                </a>
+                <ul
+                    class="mx-auto hidden gap-4 text-[17px] leading-[24px] md:flex lg:gap-8"
+                >
+                    <li>
+                        <a class="block" href="/">Home</a>
+                    </li>
+                    <li>
+                        <a class="block" href="#">Shop</a>
+                    </li>
+                    <li>
+                        <a class="block" href="#">Products</a>
+                    </li>
+                    <li>
+                        <a class="block" href="#">Pages</a>
+                    </li>
+                    <li>
+                        <a class="block" href="#">Blog</a>
+                    </li>
+                    <li>
+                        <a class="block" href="/styleguide">Elements</a>
+                    </li>
+                </ul>
+                <div class="flex items-center gap-[8px] md:gap-[24px]">
+                    <button
+                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
+                    >
+                        <span
+                            class="icon-search block text-[28px] leading-[28px]"
+                        ></span>
+                    </button>
+                    <button
+                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
+                    >
+                        <span
+                            class="icon-login block text-[28px] leading-[28px]"
+                        ></span>
+                    </button>
+                    <button
+                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
+                    >
+                        <span
+                            class="icon-wishlist block text-[28px] leading-[28px]"
+                        ></span>
+                    </button>
+                    <button
+                        class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
+                    >
+                        <span
+                            class="icon-bag block text-[28px] leading-[28px]"
+                        ></span>
+                    </button>
+                </div>
+            </div>
+        </header>
         <!-- Script -->
         <script type="module" src="/src/main.ts"></script>
     </body>
