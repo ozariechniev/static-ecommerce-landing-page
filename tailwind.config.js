@@ -41,8 +41,8 @@ export default {
                     },
                 },
                 shadesOfGray: {
-                    100: '#fefefe',
-                    200: '#ddd',
+                    100: '#eee',
+                    200: '#f9f9f9',
                 },
             },
         },
