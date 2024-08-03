@@ -30,10 +30,6 @@ class HeroSlider {
             throw new Error(`Element with selector ${selector} not found.`);
         }
 
-        if (this.swiperInstance) {
-            throw new Error('Swiper instance already exists.');
-        }
-
         if (options) {
             options = { ...this.swiperOptions, ...options };
         }
@@ -42,6 +38,10 @@ class HeroSlider {
     }
 
     init(selector: string, options: SwiperOptions) {
+        if (this.swiperInstance) {
+            throw new Error('Swiper instance already exists.');
+        }
+
         this.swiperInstance = new Swiper(selector, options);
     }
 }
