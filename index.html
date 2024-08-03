@@ -45,7 +45,10 @@
         <!-- Header -->
         <header class="fixed left-0 top-0 z-10 w-full bg-white">
             <div class="container m-auto flex items-center py-[36px]">
-                <button class="hover:text-primary-navy">
+                <button
+                    class="hover:text-primary-navy"
+                    aria-label="Open menu panel"
+                >
                     <span
                         class="icon-bars2 block h-[26px] w-[26px] text-[26px] md:hidden"
                     ></span>
@@ -83,6 +86,7 @@
                 <div class="flex items-center gap-[8px] md:gap-[24px]">
                     <button
                         class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
+                        aria-label="Open search panel"
                     >
                         <span
                             class="icon-search block text-[28px] leading-[28px]"
@@ -90,6 +94,7 @@
                     </button>
                     <button
                         class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
+                        aria-label="Show login popup"
                     >
                         <span
                             class="icon-login block text-[28px] leading-[28px]"
@@ -97,6 +102,7 @@
                     </button>
                     <button
                         class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
+                        aria-label="Open wishlist panel"
                     >
                         <span
                             class="icon-wishlist block text-[28px] leading-[28px]"
@@ -104,6 +110,7 @@
                     </button>
                     <button
                         class="transition-colors duration-200 ease-in-out hover:text-primary-navy"
+                        aria-label="Open cart panel"
                     >
                         <span
                             class="icon-bag block text-[28px] leading-[28px]"
@@ -112,6 +119,7 @@
                 </div>
             </div>
         </header>
+
         <!-- Script -->
         <script type="module" src="/src/main.ts"></script>
     </body>
