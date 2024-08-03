@@ -2,6 +2,17 @@
 export default {
     content: ['./*.html', './src/**/*.{js,ts}'],
     theme: {
+        container: {
+            padding: {
+                DEFAULT: '15px',
+            },
+        },
+        screens: {
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1200px',
+        },
         extend: {
             fontFamily: {
                 primary: 'Jost, sans-serif',

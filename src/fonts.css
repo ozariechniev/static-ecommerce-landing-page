@@ -49,10 +49,7 @@
 
 @font-face {
     font-family: 'icomoon';
-    src:
-        url('./assets/fonts/icons/icomoon.ttf?cgb10h') format('truetype'),
-        url('./assets/fonts/icons/icomoon.woff?cgb10h') format('woff'),
-        url('./assets/fonts/icons/icomoon.svg?cgb10h#icomoon') format('svg');
+    src: url('./assets/fonts/icons/icomoon.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

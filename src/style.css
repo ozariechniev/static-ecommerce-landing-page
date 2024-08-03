@@ -41,6 +41,14 @@
         @apply text-[18px] font-normal leading-[28px];
     }
 
+    a {
+        @apply text-primary-dark transition-colors duration-200 ease-in-out;
+    }
+
+    a:hover {
+        @apply text-primary-navy;
+    }
+
     [class^='icon-'],
     [class*=' icon-'] {
         /* use !important to prevent issues with browser extensions that change fonts */
@@ -243,5 +251,11 @@
 
     .icon-wishlist:before {
         content: '\e930';
+    }
+}
+
+@layer utilities {
+    .debug * {
+        outline: 1px solid red;
     }
 }

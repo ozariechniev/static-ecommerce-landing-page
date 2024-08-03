@@ -35,13 +35,6 @@
         <link
             as="font"
             crossorigin="anonymous"
-            href="./src/assets/fonts/icons/icomoon.ttf"
-            rel="preload"
-            type="font/ttf"
-        />
-        <link
-            as="font"
-            crossorigin="anonymous"
             href="./src/assets/fonts/icons/icomoon.woff"
             rel="preload"
             type="font/woff"
@@ -50,8 +43,17 @@
     </head>
     <body>
         <div class="container m-auto" id="app">
-            <h1 class="mb-3 border-b py-3 text-center text-3xl font-bold">
-                Styleguide
+            <h1
+                class="mb-3 flex w-full items-center border-b py-3 text-center text-3xl font-bold"
+            >
+                <a
+                    class="flex items-center gap-2 border p-2 text-xl font-normal"
+                    href="/"
+                >
+                    <span class="icon-prev"></span>
+                    Back to home
+                </a>
+                <span class="mx-auto">Styleguide</span>
             </h1>
             <div class="mb-3 block md:grid md:grid-cols-2 md:gap-3">
                 <div class="border">
