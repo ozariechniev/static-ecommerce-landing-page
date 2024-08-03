@@ -16,6 +16,7 @@ export default {
         extend: {
             fontFamily: {
                 primary: 'Jost, sans-serif',
+                secondary: 'Bebas Neue, sans-serif',
             },
             colors: {
                 primary: {
