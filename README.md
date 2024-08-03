@@ -1,5 +1,7 @@
 # E-commerce landing page
 
+![Build status](https://github.com/ozariechniev/static-ecommerce-landing-page/actions/workflows/node.js.yml/badge.svg)
+
 ## 📝 Description
 
 {{ description }}
