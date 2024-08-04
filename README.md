@@ -8,6 +8,8 @@ E-commerce landing page built with Vite, Tailwind CSS, and TypeScript.
 
 <img src="./public/preview.jpeg" alt="Preview" width="100%">
 
+[Live demo](https://static-ecommerce-landing-page.vercel.app/)
+
 ## 🚀 Technologies & Tools
 
 | ![Typescript](public/typescript.svg) | ![Tailwind](public/tailwind.svg) | ![Vite](public/vite.svg) | ![Prettier](public/prettier.svg) |
