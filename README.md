@@ -21,6 +21,8 @@ E-commerce landing page built with Vite, Tailwind CSS, and TypeScript.
 npm install
 npm run dev   # development
 npm run build # production build
+
+# In case of error try to remove package-lock.json, node_modules folder and run npm install again
 ```
 
 ## 🌐 Links
