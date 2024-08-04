@@ -255,8 +255,16 @@
 }
 
 @layer components {
+    .button {
+        @apply rounded px-7 py-[9px] font-medium transition-colors duration-300 ease-in-out hover:bg-primary-navy hover:text-white
+    }
+
     .button-primary {
-        @apply rounded bg-white px-7 py-[9px] font-medium text-primary-dark transition-colors duration-300 ease-in-out hover:bg-primary-navy hover:text-white
+        @apply button bg-white text-primary-dark;
+    }
+
+    .button-secondary {
+        @apply button bg-primary-dark text-white;
     }
 }
 
