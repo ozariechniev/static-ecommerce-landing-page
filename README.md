@@ -4,7 +4,7 @@
 
 ## 📝 Description
 
-{{ description }}
+E-commerce landing page built with Vite, Tailwind CSS, and TypeScript.
 
 ## 🚀 Technologies & Tools
 
@@ -14,7 +14,9 @@
 ## 📦 Installation
 
 ```bash
-{{ installation }}
+npm install
+npm run dev   # development
+npm run build # production build
 ```
 
 ## 🌐 Links
