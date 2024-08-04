@@ -6,10 +6,10 @@
 
 {{ description }}
 
-## 🚀 Technologies
+## 🚀 Technologies & Tools
 
-| ![Vite](public/vite.svg) | ![Tailwind](public/tailwind.svg) | ![Typescript](public/typescript.svg) | ![Prettier](public/prettier.svg) |
-|--------------------------|----------------------------------|--------------------------------------|----------------------------------|
+| ![Typescript](public/typescript.svg) | ![Tailwind](public/tailwind.svg) | ![Vite](public/vite.svg) | ![Prettier](public/prettier.svg) |
+|--------------------------|----------------------------------|--------------------------|----------------------------------|
 
 ## 📦 Installation
 
