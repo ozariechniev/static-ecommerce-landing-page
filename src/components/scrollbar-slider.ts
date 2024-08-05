@@ -11,7 +11,15 @@ class ScrollbarSlider {
     swiperParentElement: HTMLElement | null = null;
     swiperOptions: SwiperOptions = {
         slidesPerView: 'auto',
-        spaceBetween: 30,
+        spaceBetween: 10,
+        breakpoints: {
+            768: {
+                spaceBetween: 20,
+            },
+            1024: {
+                spaceBetween: 30,
+            },
+        },
         scrollbar: {
             el: `${this.swiperSelector} .swiper-scrollbar`,
             draggable: true,
