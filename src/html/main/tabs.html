@@ -1,0 +1,49 @@
+<!-- Categories Tabs -->
+<div class="tabs js-tabs my-10 overflow-hidden lg:my-20">
+    <div
+        class="tabs-actions container mx-auto mb-5 flex gap-5 md:mb-10 md:gap-10"
+    >
+        <h3>
+            <button
+                aria-label="Best Sellers"
+                class="tabs-action tabs-action-active"
+                data-tab="tab-1"
+            >
+                <span
+                    class="font-secondary text-3xl text-neutral-medium transition-colors duration-300 md:text-[34px]/[44px]"
+                    >Best Sellers</span
+                >
+            </button>
+        </h3>
+        <h3>
+            <button aria-label="New in" class="tabs-action" data-tab="tab-2">
+                <span
+                    class="font-secondary text-3xl text-neutral-medium transition-colors duration-300 md:text-[34px]/[44px]"
+                    >New in</span
+                >
+            </button>
+        </h3>
+    </div>
+    <div class="tabs-content">
+        <!-- Tab 1 -->
+        <div
+            aria-labelledby="tab-1"
+            class="tabs-pane tabs-pane-active"
+            id="tab-1"
+        >
+            <load src="src/html/main/scrollbar-slider-1.html" />
+        </div>
+        <!--/ Tab 1 -->
+        <!-- Tab 2 -->
+        <div
+            aria-labelledby="tab-2"
+            class="tabs-pane"
+            id="tab-2"
+            style="display: none"
+        >
+            <load src="src/html/main/scrollbar-slider-2.html" />
+        </div>
+        <!--/ Tab 2 -->
+    </div>
+</div>
+<!--/ Categories Tabs -->
