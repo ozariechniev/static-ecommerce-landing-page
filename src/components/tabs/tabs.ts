@@ -1,6 +1,12 @@
 import './tabs.css';
 
 class Tabs {
+    protected customEvent: CustomEvent = new CustomEvent('tabs:switched', {
+        detail: {
+            activeTab: null,
+        },
+    });
+
     tabsSelector = '.js-tabs';
     tabsElement: HTMLElement | null = null;
     tabsActionSelector = '[data-tab]';
@@ -99,6 +105,20 @@ class Tabs {
                 tab.style.display = 'none';
             }
         });
+
+        /**
+         * Dispatch a custom event when the tab is switched.
+         * The event contains the active tab index.
+         * Useful when you need to update the slider size, for example.
+         */
+        const activeTabIndex = [...actions].indexOf(action);
+        const customEvent = new CustomEvent('tabs:switched', {
+            detail: {
+                activeTab: activeTabIndex + 1,
+            },
+        });
+
+        window.dispatchEvent(customEvent);
     }
 }
 

@@ -72,10 +72,13 @@ class ScrollbarSlider {
     }
 
     /**
+     * Screen test element is created to calculate the slider negative margin
+     * from the right side.
+     *
      * @param swiperParentElement - Insert the screen test element before this element.
      * @param callback - Set the slider position after the screen test element is created.
      */
-    createScreenTestElement(
+    protected createScreenTestElement(
         swiperParentElement: HTMLElement,
         callback: (swiperScreenTestElement: HTMLElement) => void,
     ) {
@@ -109,7 +112,7 @@ class ScrollbarSlider {
      * @param swiperScreenTestElement
      * @param swiperElement
      */
-    setSliderPosition(
+    protected setSliderPosition(
         swiperScreenTestElement: HTMLElement,
         swiperElement: HTMLElement | null,
     ) {
@@ -123,7 +126,7 @@ class ScrollbarSlider {
         swiperElement.style.setProperty('margin-right', `-${leftPosition}px`);
     }
 
-    bindWindowResize(
+    protected bindWindowResize(
         swiperScreenTestElement: HTMLElement,
         swiperElement: HTMLElement | null,
     ) {
@@ -132,7 +135,7 @@ class ScrollbarSlider {
         });
     }
 
-    bindIntersectionObserver(
+    protected bindIntersectionObserver(
         swiperScreenTestElement: HTMLElement,
         swiperElement: HTMLElement | null,
     ) {
@@ -150,12 +153,37 @@ class ScrollbarSlider {
         observer.observe(swiperScreenTestElement);
     }
 
-    init(selector: string, options: SwiperOptions) {
+    protected init(selector: string, options: SwiperOptions) {
         if (this.swiperInstance) {
             throw new Error('Swiper instance already exists.');
         }
 
         this.swiperInstance = new Swiper(selector, options);
+
+        /**
+         * Update scrollbar size when the tab is switched
+         * to avoid scrollbar issues.
+         */
+        window.addEventListener(
+            'tabs:switched',
+            (event: Event) => {
+                const customEvent = event as CustomEvent;
+                const { activeTab } = customEvent.detail;
+
+                if (!activeTab || !this.swiperElement) {
+                    return;
+                }
+
+                const hasParentTab = this.swiperElement.closest(
+                    `[aria-labelledby="tab-${activeTab}"]`,
+                );
+
+                if (hasParentTab && this.swiperInstance instanceof Swiper) {
+                    this.swiperInstance.scrollbar?.updateSize();
+                }
+            },
+            false,
+        );
     }
 }
 
