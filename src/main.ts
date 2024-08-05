@@ -1,6 +1,6 @@
-import HeroSlider from './components/hero-slider.ts';
-import ScrollbarSlider from './components/scrollbar-slider.ts';
-import Tabs from './components/tabs.ts';
+import HeroSlider from './components/hero-slider/hero-slider.ts';
+import ScrollbarSlider from './components/scrollbar-slider/scrollbar-slider.ts';
+import Tabs from './components/tabs/tabs.ts';
 
 class App {
     constructor() {
