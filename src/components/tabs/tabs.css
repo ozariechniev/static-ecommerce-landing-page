@@ -1,5 +1,5 @@
 .tabs {
     .tabs-action-active span {
-        color: #111;
+        border-bottom: 2px solid #111;
     }
 }
