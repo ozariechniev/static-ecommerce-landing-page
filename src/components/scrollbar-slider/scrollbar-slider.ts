@@ -175,7 +175,7 @@ class ScrollbarSlider {
                 }
 
                 const hasParentTab = this.swiperElement.closest(
-                    `[aria-labelledby="tab-${activeTab}"]`,
+                    `[aria-labelledby="tab-${activeTab}-action"]`,
                 );
 
                 if (hasParentTab && this.swiperInstance instanceof Swiper) {
