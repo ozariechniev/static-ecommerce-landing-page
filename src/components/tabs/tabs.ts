@@ -94,7 +94,7 @@ class Tabs {
         [...tabs].forEach((tab) => {
             if (
                 tab.getAttribute('aria-labelledby') ===
-                action.getAttribute('data-tab')
+                action.getAttribute('id')
             ) {
                 tab.classList.add('tabs-pane-active');
                 tab.setAttribute('aria-hidden', 'false');

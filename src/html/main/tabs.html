@@ -1,23 +1,34 @@
 <!-- Categories Tabs -->
 <div class="tabs js-tabs my-10 overflow-hidden lg:my-20">
     <div
+        role="tablist"
         class="tabs-actions container mx-auto mb-5 flex gap-5 md:mb-10 md:gap-10"
     >
-        <h3>
-            <button
-                aria-label="Best Sellers"
-                class="tabs-action tabs-action-active"
-                data-tab="tab-1"
-            >
+        <h3
+            aria-controls="tab-1"
+            data-tab="tab-1"
+            role="tab"
+            id="tab-1-action"
+            class="tabs-action tabs-action-active"
+        >
+            <button>
                 <span
+                    role="presentation"
                     class="font-secondary text-3xl text-neutral-medium transition-colors duration-300 md:text-[34px]/[44px]"
                     >Best Sellers</span
                 >
             </button>
         </h3>
-        <h3>
-            <button aria-label="New in" class="tabs-action" data-tab="tab-2">
+        <h3
+            aria-controls="tab-1"
+            data-tab="tab-1"
+            role="tab"
+            id="tab-2-action"
+            class="tabs-action"
+        >
+            <button>
                 <span
+                    role="presentation"
                     class="font-secondary text-3xl text-neutral-medium transition-colors duration-300 md:text-[34px]/[44px]"
                     >New in</span
                 >
@@ -27,19 +38,21 @@
     <div class="tabs-content">
         <!-- Tab 1 -->
         <div
-            aria-labelledby="tab-1"
+            aria-labelledby="tab-1-action"
             class="tabs-pane tabs-pane-active"
             id="tab-1"
+            role="tabpanel"
         >
             <load src="src/html/main/scrollbar-slider-1.html" />
         </div>
         <!--/ Tab 1 -->
         <!-- Tab 2 -->
         <div
-            aria-labelledby="tab-2"
+            aria-labelledby="tab-2-action"
             class="tabs-pane"
             id="tab-2"
             style="display: none"
+            role="tabpanel"
         >
             <load src="src/html/main/scrollbar-slider-2.html" />
         </div>
