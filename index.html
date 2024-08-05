@@ -508,7 +508,7 @@
             </div>
             <!--/ Hero slider -->
             <!-- Categories Tabs -->
-            <div class="tabs my-10 overflow-hidden lg:my-20">
+            <div class="tabs js-tabs my-10 overflow-hidden lg:my-20">
                 <div
                     class="tabs-actions container mx-auto mb-5 flex gap-5 md:mb-10 md:gap-10"
                 >
@@ -519,7 +519,7 @@
                             data-tab="tab-1"
                         >
                             <span
-                                class="font-secondary text-3xl text-neutral-medium md:text-[34px]/[44px]"
+                                class="font-secondary text-3xl text-neutral-medium transition-colors duration-300 md:text-[34px]/[44px]"
                                 >Best Sellers</span
                             >
                         </button>
@@ -528,10 +528,10 @@
                         <button
                             aria-label="New in"
                             class="tabs-action"
-                            data-tab="tab-1"
+                            data-tab="tab-2"
                         >
                             <span
-                                class="font-secondary text-3xl text-neutral-medium md:text-[34px]/[44px]"
+                                class="font-secondary text-3xl text-neutral-medium transition-colors duration-300 md:text-[34px]/[44px]"
                                 >New in</span
                             >
                         </button>
@@ -541,7 +541,7 @@
                     <!-- Tab 1 -->
                     <div
                         aria-labelledby="tab-1"
-                        class="tabs-pane active"
+                        class="tabs-pane tabs-pane-active"
                         id="tab-1"
                     >
                         <!-- Swiper -->
@@ -1335,7 +1335,7 @@
             <!-- Promo block -->
             <div class="my-10 bg-white lg:my-20">
                 <div
-                    class="container mx-auto grid h-80 gap-[30px] lg:grid-cols-2"
+                    class="container mx-auto gap-[30px] space-y-[30px] lg:grid lg:grid-cols-2 lg:space-y-0"
                 >
                     <div class="relative h-80">
                         <picture class="block h-full w-full">

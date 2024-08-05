@@ -1,5 +1,6 @@
 import HeroSlider from './components/hero-slider.ts';
 import ScrollbarSlider from './components/scrollbar-slider.ts';
+import Tabs from './components/tabs.ts';
 
 class App {
     constructor() {
@@ -15,6 +16,14 @@ class App {
         };
 
         new HeroSlider(heroSliderSelector, heroSliderOptions);
+
+        // --------------------------------------------------------------------
+        // Tabs
+        // --------------------------------------------------------------------
+
+        const tabsSelector = '.js-tabs';
+
+        new Tabs(tabsSelector);
 
         // --------------------------------------------------------------------
         // Scrollbar Slider
