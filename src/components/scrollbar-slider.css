@@ -1,8 +1,14 @@
 .scrollbar-slider {
-    padding-right: 15px;
-
     .swiper-slide {
         width: 270px;
+    }
+
+    &.swiper-initialized {
+        padding-right: 15px;
+
+        .swiper-wrapper {
+            gap: 0;
+        }
     }
 }
 

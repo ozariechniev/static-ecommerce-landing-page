@@ -53,17 +53,17 @@ class ScrollbarSlider {
             (swiperScreenTestElement) => {
                 this.setSliderPosition(
                     swiperScreenTestElement,
-                    this.swiperParentElement,
+                    this.swiperElement,
                 );
 
                 this.bindWindowResize(
                     swiperScreenTestElement,
-                    this.swiperParentElement,
+                    this.swiperElement,
                 );
 
                 this.bindIntersectionObserver(
                     swiperScreenTestElement,
-                    this.swiperParentElement,
+                    this.swiperElement,
                 );
 
                 this.init(selector, options);
@@ -72,9 +72,6 @@ class ScrollbarSlider {
     }
 
     /**
-     * In order to align the slider with the container left edge, we need
-     * to create a screen test element to track the left position.
-     *
      * @param swiperParentElement - Insert the screen test element before this element.
      * @param callback - Set the slider position after the screen test element is created.
      */
@@ -109,51 +106,42 @@ class ScrollbarSlider {
     }
 
     /**
-     * Set parent element padding-left property to align the slider
-     * with the container left edge.
-     *
      * @param swiperScreenTestElement
-     * @param swiperParentElement
+     * @param swiperElement
      */
     setSliderPosition(
         swiperScreenTestElement: HTMLElement,
-        swiperParentElement: HTMLElement | null,
+        swiperElement: HTMLElement | null,
     ) {
         const leftPosition =
             swiperScreenTestElement.getBoundingClientRect().left;
 
-        if (!swiperParentElement) {
+        if (!swiperElement) {
             throw new Error('Parent element not found.');
         }
 
-        swiperParentElement.style.setProperty(
-            'padding-left',
-            `${leftPosition}px`,
-        );
+        swiperElement.style.setProperty('margin-right', `-${leftPosition}px`);
     }
 
     bindWindowResize(
         swiperScreenTestElement: HTMLElement,
-        swiperParentElement: HTMLElement | null,
+        swiperElement: HTMLElement | null,
     ) {
         window.addEventListener('resize', () => {
-            this.setSliderPosition(
-                swiperScreenTestElement,
-                swiperParentElement,
-            );
+            this.setSliderPosition(swiperScreenTestElement, swiperElement);
         });
     }
 
     bindIntersectionObserver(
         swiperScreenTestElement: HTMLElement,
-        swiperParentElement: HTMLElement | null,
+        swiperElement: HTMLElement | null,
     ) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     this.setSliderPosition(
                         swiperScreenTestElement,
-                        swiperParentElement,
+                        swiperElement,
                     );
                 }
             });
