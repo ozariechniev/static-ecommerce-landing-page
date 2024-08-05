@@ -1,6 +1,4 @@
 import { SwiperOptions } from 'swiper/types';
-// import Swiper from 'swiper/bundle';
-// import 'swiper/css/bundle';
 import Swiper from 'swiper';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -22,6 +20,11 @@ class HeroSlider {
     };
     swiperInstance: Swiper | null = null;
 
+    /**
+     * @constructor
+     * @param selector
+     * @param options
+     */
     constructor(
         selector: string = this.swiperSelector,
         options: SwiperOptions = this.swiperOptions,
@@ -40,6 +43,11 @@ class HeroSlider {
         this.init(selector, options);
     }
 
+    /**
+     * @param selector
+     * @param options
+     * @protected
+     */
     protected init(selector: string, options: SwiperOptions) {
         if (this.swiperInstance) {
             throw new Error('Swiper instance already exists.');

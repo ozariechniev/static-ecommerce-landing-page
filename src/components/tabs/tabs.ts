@@ -14,6 +14,10 @@ class Tabs {
     tabsTabSelector = '[aria-labelledby]';
     tabsTabElements: NodeListOf<HTMLElement> | null = null;
 
+    /**
+     * @constructor
+     * @param selector
+     */
     constructor(selector = this.tabsSelector) {
         this.tabsSelector = selector;
         this.tabsElement = document.querySelector(selector);
@@ -42,6 +46,11 @@ class Tabs {
         this.bindTabs(this.tabsActionElements, this.tabsTabElements);
     }
 
+    /**
+     * @param actions
+     * @param tabs
+     * @protected
+     */
     protected init(
         actions: NodeListOf<HTMLElement>,
         tabs: NodeListOf<HTMLElement>,
@@ -63,6 +72,11 @@ class Tabs {
         });
     }
 
+    /**
+     * @param actions
+     * @param tabs
+     * @protected
+     */
     protected bindTabs(
         actions: NodeListOf<HTMLElement>,
         tabs: NodeListOf<HTMLElement>,
@@ -76,6 +90,12 @@ class Tabs {
         });
     }
 
+    /**
+     * @param actions
+     * @param tabs
+     * @param action
+     * @protected
+     */
     protected switchTab(
         actions: NodeListOf<HTMLElement>,
         tabs: NodeListOf<HTMLElement>,

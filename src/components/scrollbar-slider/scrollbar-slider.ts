@@ -28,6 +28,11 @@ class ScrollbarSlider {
     };
     swiperInstance: Swiper | null = null;
 
+    /**
+     * @constructor
+     * @param selector
+     * @param options
+     */
     constructor(
         selector: string = this.swiperSelector,
         options: SwiperOptions = this.swiperOptions,
@@ -77,6 +82,7 @@ class ScrollbarSlider {
      *
      * @param swiperParentElement - Insert the screen test element before this element.
      * @param callback - Set the slider position after the screen test element is created.
+     * @protected
      */
     protected createScreenTestElement(
         swiperParentElement: HTMLElement,
@@ -111,6 +117,7 @@ class ScrollbarSlider {
     /**
      * @param swiperScreenTestElement
      * @param swiperElement
+     * @protected
      */
     protected setSliderPosition(
         swiperScreenTestElement: HTMLElement,
@@ -126,6 +133,11 @@ class ScrollbarSlider {
         swiperElement.style.setProperty('margin-right', `-${leftPosition}px`);
     }
 
+    /**
+     * @param swiperScreenTestElement
+     * @param swiperElement
+     * @protected
+     */
     protected bindWindowResize(
         swiperScreenTestElement: HTMLElement,
         swiperElement: HTMLElement | null,
@@ -135,6 +147,11 @@ class ScrollbarSlider {
         });
     }
 
+    /**
+     * @param swiperScreenTestElement
+     * @param swiperElement
+     * @protected
+     */
     protected bindIntersectionObserver(
         swiperScreenTestElement: HTMLElement,
         swiperElement: HTMLElement | null,
@@ -153,6 +170,11 @@ class ScrollbarSlider {
         observer.observe(swiperScreenTestElement);
     }
 
+    /**
+     * @param selector
+     * @param options
+     * @protected
+     */
     protected init(selector: string, options: SwiperOptions) {
         if (this.swiperInstance) {
             throw new Error('Swiper instance already exists.');
