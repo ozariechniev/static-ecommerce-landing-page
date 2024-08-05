@@ -17,6 +17,7 @@
         right: auto;
         top: auto;
         width: 100%;
+        z-index: 9;
 
         .swiper-scrollbar-drag {
             background: #555;
