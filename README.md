@@ -1,6 +1,6 @@
 # E-commerce landing page
 
-![Website Deploy](https://deploy-badge.vercel.app/?url=http://www.nextjs.org/&name=static-ecommerce-landing-page) ![Build status](https://github.com/ozariechniev/static-ecommerce-landing-page/actions/workflows/node.js.yml/badge.svg)
+![Vercel Deploy](https://deploy-badge.vercel.app/vercel/static-ecommerce-landing-page) ![Build status](https://github.com/ozariechniev/static-ecommerce-landing-page/actions/workflows/node.js.yml/badge.svg)
 
 ## 📝 Description
 
