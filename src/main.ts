@@ -6,6 +6,7 @@ class App {
         // --------------------------------------------------------------------
         // Hero Slider
         // --------------------------------------------------------------------
+
         const heroSliderSelector = '.js-hero-slider';
         const heroSliderOptions = {
             autoplay: {
