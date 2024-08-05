@@ -30,7 +30,6 @@ class HeroSlider {
         options: SwiperOptions = this.swiperOptions,
     ) {
         this.swiperSelector = selector;
-        this.swiperOptions = options;
 
         if (!document.querySelector(this.swiperSelector)) {
             throw new Error(`Element with selector ${selector} not found.`);
