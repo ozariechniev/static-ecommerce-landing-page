@@ -1,4 +1,6 @@
 .scrollbar-slider {
+    user-select: none;
+
     .swiper-slide {
         width: 270px;
     }
