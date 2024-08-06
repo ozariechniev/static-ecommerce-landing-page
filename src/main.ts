@@ -1,9 +1,16 @@
 import HeroSlider from './components/hero-slider/hero-slider.ts';
 import ScrollbarSlider from './components/scrollbar-slider/scrollbar-slider.ts';
 import Tabs from './components/tabs/tabs.ts';
+import Search from './components/search/search.ts';
 
 class App {
     constructor() {
+        // --------------------------------------------------------------------
+        // Search
+        // --------------------------------------------------------------------
+
+        new Search();
+
         // --------------------------------------------------------------------
         // Hero Slider
         // --------------------------------------------------------------------

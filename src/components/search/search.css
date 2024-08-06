@@ -1,0 +1,22 @@
+.search-active {
+    overflow: hidden;
+
+    &:before {
+        background-color: rgba(0, 0, 0, 0.85);
+        content: '';
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 30;
+    }
+
+    .search-block {
+        display: block;
+    }
+
+    .search-trigger {
+        color: #2355d6;
+    }
+}
