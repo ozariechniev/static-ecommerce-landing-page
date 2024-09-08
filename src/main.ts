@@ -1,7 +1,7 @@
+import Search from './components/search/search.ts';
 import HeroSlider from './components/hero-slider/hero-slider.ts';
 import ScrollbarSlider from './components/scrollbar-slider/scrollbar-slider.ts';
 import Tabs from './components/tabs/tabs.ts';
-import Search from './components/search/search.ts';
 
 class App {
     constructor() {
@@ -15,22 +15,13 @@ class App {
         // Hero Slider
         // --------------------------------------------------------------------
 
-        const heroSliderSelector = '.js-hero-slider';
-        const heroSliderOptions = {
-            autoplay: {
-                delay: 7000,
-            },
-        };
-
-        new HeroSlider(heroSliderSelector, heroSliderOptions);
+        new HeroSlider();
 
         // --------------------------------------------------------------------
         // Tabs
         // --------------------------------------------------------------------
 
-        const tabsSelector = '.js-tabs';
-
-        new Tabs(tabsSelector);
+        new Tabs();
 
         // --------------------------------------------------------------------
         // Scrollbar Slider

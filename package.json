@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prettier": "prettier \"./src/**/*.{html,css,ts}\" --check --cache --cache-strategy=content --cache-location=.prettiercache",
+    "prettier:fix": "prettier \"./src/**/*.{html,css,ts}\" --write"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",

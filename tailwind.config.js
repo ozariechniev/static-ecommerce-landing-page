@@ -17,6 +17,7 @@ export default {
             fontFamily: {
                 primary: 'Jost, sans-serif',
                 secondary: 'Bebas Neue, sans-serif',
+                icomoon: 'icomoon',
             },
             colors: {
                 primary: {

@@ -52,7 +52,7 @@
     [class^='icon-'],
     [class*=' icon-'] {
         /* use !important to prevent issues with browser extensions that change fonts */
-        font-family: 'icomoon', sans-serif !important;
+        @apply font-icomoon !important;
         speak: never;
         font-style: normal;
         font-weight: normal;
@@ -256,7 +256,7 @@
 
 @layer components {
     .button {
-        @apply rounded px-7 py-[9px] font-medium transition-colors duration-300 ease-in-out hover:bg-primary-navy hover:text-white
+        @apply rounded px-7 py-[9px] font-medium transition-colors duration-300 ease-in-out hover:bg-primary-navy hover:text-white;
     }
 
     .button-primary {

@@ -1,18 +1,35 @@
 import './search.css';
 
 class Search {
-    searchBlockSelector: string = '.js-search-block';
-    searchBlockElement: HTMLElement | null;
-    searchTriggerSelector: string = '.js-search-trigger';
-    searchTriggerElement: HTMLElement | null;
+    private readonly searchBlockSelector: string;
+    private readonly searchTriggerSelector: string;
+    private readonly searchBlockElement: HTMLDivElement | null;
+    private readonly searchTriggerElement: HTMLButtonElement | null;
 
-    constructor() {
-        this.searchBlockElement = document.querySelector(
+    constructor(
+        blockSelector: string = '.js-search-block',
+        triggerSelector: string = '.js-search-trigger',
+    ) {
+        this.searchBlockSelector = blockSelector;
+        this.searchTriggerSelector = triggerSelector;
+        this.searchBlockElement = document.querySelector<HTMLDivElement>(
             this.searchBlockSelector,
         );
-        this.searchTriggerElement = document.querySelector(
+        this.searchTriggerElement = document.querySelector<HTMLButtonElement>(
             this.searchTriggerSelector,
         );
+
+        if (!this.searchBlockElement) {
+            throw new Error(
+                `Element with selector ${this.searchBlockSelector} not found.`,
+            );
+        }
+
+        if (!this.searchTriggerElement) {
+            throw new Error(
+                `Element with selector ${this.searchTriggerSelector} not found.`,
+            );
+        }
 
         if (this.searchTriggerElement && this.searchBlockElement) {
             this.bindEvents();
@@ -26,9 +43,10 @@ class Search {
     }
 
     protected bindEvents() {
-        this.searchTriggerElement?.addEventListener('click', () => {
-            this.toggleSearchBlock();
-        });
+        this.searchTriggerElement?.addEventListener(
+            'click',
+            this.toggleSearchBlock.bind(this),
+        );
 
         document.addEventListener('click', (event) => {
             const target = event.target as HTMLElement;

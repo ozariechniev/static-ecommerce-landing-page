@@ -6,24 +6,30 @@ class Tabs {
             activeTab: null,
         },
     });
+    private readonly tabsSelector: string;
+    private readonly tabsActionSelector: string;
+    private readonly tabsTabSelector: string;
+    private readonly tabsElement: HTMLDivElement | null = null;
+    private readonly tabsActionElements: NodeListOf<HTMLElement> | null = null;
+    private readonly tabsTabElements: NodeListOf<HTMLElement> | null = null;
+    private readonly tabsInitialActiveTab: number;
 
-    tabsSelector = '.js-tabs';
-    tabsElement: HTMLElement | null = null;
-    tabsActionSelector = '[data-tab]';
-    tabsActionElements: NodeListOf<HTMLElement> | null = null;
-    tabsTabSelector = '[aria-labelledby]';
-    tabsTabElements: NodeListOf<HTMLElement> | null = null;
-
-    /**
-     * @constructor
-     * @param selector
-     */
-    constructor(selector = this.tabsSelector) {
+    constructor(
+        selector = '.js-tabs',
+        actionSelector = '[data-tab]',
+        tabSelector = '[aria-labelledby]',
+        initialActiveTab = 1,
+    ) {
         this.tabsSelector = selector;
-        this.tabsElement = document.querySelector(selector);
+        this.tabsActionSelector = actionSelector;
+        this.tabsTabSelector = tabSelector;
+        this.tabsElement = document.querySelector(this.tabsSelector);
+        this.tabsInitialActiveTab = initialActiveTab;
 
         if (!this.tabsElement) {
-            throw new Error(`Element with selector ${selector} not found.`);
+            throw new Error(
+                `Wrong tabs initialization. Please, check ${this.tabsSelector} selector.`,
+            );
         }
 
         this.tabsActionElements = this.tabsElement.querySelectorAll(
@@ -34,96 +40,92 @@ class Tabs {
             this.tabsTabSelector,
         );
 
+        this.init();
+        this.bindTabs();
+    }
+
+    protected init() {
         if (
-            !this.tabsActionElements ||
-            !this.tabsTabElements ||
-            this.tabsActionElements.length !== this.tabsTabElements.length
+            !(
+                this.tabsActionElements &&
+                this.tabsTabElements &&
+                this.tabsActionElements.length === this.tabsTabElements.length
+            )
         ) {
-            throw new Error('Wrong tabs initialization.');
+            throw new Error(
+                `Wrong tabs initialization. Please, check ${this.tabsSelector}, ${this.tabsTabSelector} selectors. The number of tabs actions and tab panes should be equal.`,
+            );
         }
 
-        this.init(this.tabsActionElements, this.tabsTabElements);
-        this.bindTabs(this.tabsActionElements, this.tabsTabElements);
-    }
+        if (
+            this.tabsInitialActiveTab < 1 ||
+            this.tabsInitialActiveTab > this.tabsActionElements.length
+        ) {
+            throw new Error(
+                `Initial active tab index is out of range. Max index is: ${this.tabsActionElements.length}.`,
+            );
+        }
 
-    /**
-     * @param actions
-     * @param tabs
-     * @protected
-     */
-    protected init(
-        actions: NodeListOf<HTMLElement>,
-        tabs: NodeListOf<HTMLElement>,
-    ) {
-        [...actions].forEach((action) => {
-            if (action.classList.contains('tabs-action-active')) {
-                action.setAttribute('aria-selected', 'true');
-            } else {
-                action.setAttribute('aria-selected', 'false');
-            }
+        [...this.tabsActionElements].forEach((action, index) => {
+            action.classList.toggle(
+                'tabs-action-active',
+                index + 1 === this.tabsInitialActiveTab,
+            );
+
+            action.setAttribute(
+                'aria-selected',
+                index + 1 === this.tabsInitialActiveTab ? 'true' : 'false',
+            );
         });
 
-        [...tabs].forEach((tab) => {
-            if (tab.classList.contains('tabs-pane-active')) {
-                tab.setAttribute('aria-hidden', 'false');
-            } else {
-                tab.setAttribute('aria-hidden', 'true');
-            }
-        });
-    }
+        [...this.tabsTabElements].forEach((tab, index) => {
+            tab.classList.toggle(
+                'tabs-pane-active',
+                index + 1 === this.tabsInitialActiveTab,
+            );
 
-    /**
-     * @param actions
-     * @param tabs
-     * @protected
-     */
-    protected bindTabs(
-        actions: NodeListOf<HTMLElement>,
-        tabs: NodeListOf<HTMLElement>,
-    ) {
-        actions.forEach((action) => {
-            action.addEventListener('click', () => {
-                if (!action.classList.contains('tabs-action-active')) {
-                    this.switchTab(actions, tabs, action);
-                }
-            });
+            tab.setAttribute(
+                'aria-hidden',
+                index + 1 === this.tabsInitialActiveTab ? 'false' : 'true',
+            );
         });
     }
 
-    /**
-     * @param actions
-     * @param tabs
-     * @param action
-     * @protected
-     */
-    protected switchTab(
-        actions: NodeListOf<HTMLElement>,
-        tabs: NodeListOf<HTMLElement>,
-        action: HTMLElement,
-    ) {
-        [...actions].forEach((item) => {
-            if (item === action) {
-                item.classList.add('tabs-action-active');
-                item.setAttribute('aria-selected', 'true');
-            } else {
-                item.classList.remove('tabs-action-active');
-                item.setAttribute('aria-selected', 'false');
-            }
+    protected switchTab(action: HTMLElement) {
+        if (
+            !(
+                this.tabsActionElements &&
+                this.tabsTabElements &&
+                this.tabsActionElements.length === this.tabsTabElements.length
+            )
+        ) {
+            throw new Error(
+                `Wrong tabs initialization. Please, check ${this.tabsSelector}, ${this.tabsTabSelector} selectors. The number of tabs actions and tab panes should be equal.`,
+            );
+        }
+
+        [...this.tabsActionElements].forEach((item) => {
+            item.classList.toggle('tabs-action-active', item === action);
+            item.setAttribute(
+                'aria-selected',
+                item === action ? 'true' : 'false',
+            );
         });
 
-        [...tabs].forEach((tab) => {
-            if (
+        [...this.tabsTabElements].forEach((tab) => {
+            tab.classList.toggle(
+                'tabs-pane-active',
                 tab.getAttribute('aria-labelledby') ===
-                action.getAttribute('id')
-            ) {
-                tab.classList.add('tabs-pane-active');
-                tab.setAttribute('aria-hidden', 'false');
-                tab.style.display = 'block';
-            } else {
-                tab.classList.remove('tabs-pane-active');
-                tab.setAttribute('aria-hidden', 'true');
-                tab.style.display = 'none';
-            }
+                    action.getAttribute('id'),
+            );
+
+            tab.setAttribute(
+                'aria-hidden',
+                tab.getAttribute('aria-labelledby') ===
+                    action.getAttribute('id')
+                    ? 'false'
+                    : 'true',
+            );
         });
 
         /**
@@ -131,7 +133,7 @@ class Tabs {
          * The event contains the active tab index.
          * Useful when you need to update the slider size, for example.
          */
-        const activeTabIndex = [...actions].indexOf(action);
+        const activeTabIndex = [...this.tabsActionElements].indexOf(action);
         const customEvent = new CustomEvent('tabs:switched', {
             detail: {
                 activeTab: activeTabIndex + 1,
@@ -139,6 +141,20 @@ class Tabs {
         });
 
         window.dispatchEvent(customEvent);
+    }
+
+    protected bindTabs() {
+        if (!(this.tabsActionElements && this.tabsTabElements)) {
+            throw new Error('Wrong tabs initialization.');
+        }
+
+        this.tabsActionElements.forEach((action) => {
+            action.addEventListener('click', () => {
+                if (!action.classList.contains('tabs-action-active')) {
+                    this.switchTab(action);
+                }
+            });
+        });
     }
 }
 

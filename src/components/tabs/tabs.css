@@ -1,5 +1,13 @@
 .tabs {
     .tabs-action-active span {
-        border-bottom: 2px solid #111;
+        @apply border-b-2 border-gray-900;
+    }
+
+    [aria-hidden='true'] {
+        @apply hidden;
+    }
+
+    [aria-hidden='false'] {
+        @apply block;
     }
 }

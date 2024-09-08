@@ -1,58 +1,61 @@
 import { SwiperOptions } from 'swiper/types';
 import Swiper from 'swiper';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import './hero-slider.css';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 class HeroSlider {
-    swiperSelector = '.js-hero-slider';
-    swiperOptions: SwiperOptions = {
-        loop: true,
-        pagination: {
-            el: `${this.swiperSelector} .swiper-pagination`,
-            clickable: true,
-        },
-        navigation: {
-            nextEl: `${this.swiperSelector} .swiper-button-next`,
-            prevEl: `${this.swiperSelector} .swiper-button-prev`,
-        },
-        modules: [Autoplay, Navigation, Pagination],
-    };
-    swiperInstance: Swiper | null = null;
+    private readonly swiperSelector: string;
+    private readonly swiperOptions: SwiperOptions;
+    private readonly swiperDefaultOptions: SwiperOptions;
+    private swiperInstance: Swiper | null = null;
 
-    /**
-     * @constructor
-     * @param selector
-     * @param options
-     */
     constructor(
-        selector: string = this.swiperSelector,
-        options: SwiperOptions = this.swiperOptions,
+        selector: string = '.js-hero-slider',
+        options: SwiperOptions = {},
     ) {
         this.swiperSelector = selector;
 
-        if (!document.querySelector(this.swiperSelector)) {
-            throw new Error(`Element with selector ${selector} not found.`);
+        const swiperElement = document.querySelector<HTMLDivElement>(
+            this.swiperSelector,
+        );
+
+        if (!swiperElement) {
+            throw new Error(
+                `Element with selector ${this.swiperSelector} not found.`,
+            );
         }
 
-        if (options) {
-            options = { ...this.swiperOptions, ...options };
-        }
+        this.swiperDefaultOptions = {
+            autoplay: {
+                delay: 7000,
+            },
+            loop: true,
+            pagination: {
+                el: `${selector} .swiper-pagination`,
+                clickable: true,
+            },
+            navigation: {
+                nextEl: `${selector} .swiper-button-next`,
+                prevEl: `${selector} .swiper-button-prev`,
+            },
+            modules: [Autoplay, Navigation, Pagination],
+        };
 
-        this.init(selector, options);
+        this.swiperOptions = { ...this.swiperDefaultOptions, ...options };
+
+        this.init();
     }
 
-    /**
-     * @param selector
-     * @param options
-     * @protected
-     */
-    protected init(selector: string, options: SwiperOptions) {
+    protected init() {
         if (this.swiperInstance) {
             throw new Error('Swiper instance already exists.');
         }
 
-        this.swiperInstance = new Swiper(selector, options);
+        this.swiperInstance = new Swiper(
+            this.swiperSelector,
+            this.swiperOptions,
+        );
     }
 }
 
