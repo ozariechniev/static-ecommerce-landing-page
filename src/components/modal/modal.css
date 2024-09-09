@@ -1,0 +1,7 @@
+.modal-active {
+    @apply overflow-hidden;
+
+    &:before {
+        @apply fixed left-0 top-0 z-[60] h-full w-full bg-black bg-opacity-85 content-[''];
+    }
+}

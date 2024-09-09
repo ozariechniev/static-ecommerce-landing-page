@@ -2,12 +2,4 @@
     .tabs-action-active span {
         @apply border-b-2 border-gray-900;
     }
-
-    [aria-hidden='true'] {
-        @apply hidden;
-    }
-
-    [aria-hidden='false'] {
-        @apply block;
-    }
 }

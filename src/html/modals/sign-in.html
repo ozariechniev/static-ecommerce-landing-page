@@ -1,0 +1,83 @@
+<div
+    aria-labelledby="modalTitle"
+    aria-describedby="modalDescription"
+    aria-hidden="true"
+    id="modal"
+    role="dialog"
+    class="js-modal modal fixed left-0 top-0 z-[70] h-full w-11/12 overflow-y-auto bg-white p-6 md:left-1/2 md:top-1/2 md:h-auto md:w-[560px] md:-translate-x-1/2 md:-translate-y-1/2 md:transform"
+>
+    <header class="relative mb-4 flex justify-between">
+        <h4 id="modalTitle">Customer Login</h4>
+        <button
+            class="js-modal-close modal-close"
+            id="closeModalButton"
+            aria-label="Close Modal"
+        >
+            <span
+                class="icon-close block size-[32px] text-[32px] hover:text-primary-navy"
+            ></span>
+        </button>
+    </header>
+    <div id="modalDescription">
+        <form action="#">
+            <div class="mb-4">
+                <label class="mb-2 block" for="email">Email:</label>
+                <input
+                    id="email"
+                    type="email"
+                    class="w-full rounded-none border border-shadesOfGray-100 p-2"
+                    required
+                />
+            </div>
+            <div class="mb-4">
+                <label class="mb-2 block" for="password">Password:</label>
+                <input
+                    id="password"
+                    class="w-full rounded-none border border-shadesOfGray-100 p-2"
+                    type="password"
+                    required
+                />
+            </div>
+            <div class="relative mb-6 flex items-center gap-4">
+                <input
+                    class="peer size-5 appearance-none rounded-none border border-shadesOfGray-100 checked:bg-primary-dark"
+                    id="show-password"
+                    type="checkbox"
+                />
+                <label for="show-password"> Show Password </label>
+                <svg
+                    class="absolute hidden h-5 w-5 peer-checked:block"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            </div>
+            <div
+                class="mb-4 grid divide-y-2 md:grid-cols-2 md:divide-x-2 md:divide-y-0"
+            >
+                <div class="pb-6 md:pb-0 md:pr-12">
+                    <button
+                        class="button-secondary m-0 h-full w-full"
+                        type="submit"
+                    >
+                        Sign In
+                    </button>
+                </div>
+                <div class="pt-6 text-center md:pt-0">
+                    <div class="mb-2 md:mb-0">Don’t have an account?</div>
+                    <a
+                        class="text-primary-navy transition-all hover:text-primary-dark"
+                        href="#"
+                        >Sign Up</a
+                    >
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

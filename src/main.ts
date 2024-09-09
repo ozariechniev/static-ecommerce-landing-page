@@ -1,31 +1,20 @@
 import Search from './components/search/search.ts';
+import Modal from './components/modal/modal.ts';
 import HeroSlider from './components/hero-slider/hero-slider.ts';
 import ScrollbarSlider from './components/scrollbar-slider/scrollbar-slider.ts';
 import Tabs from './components/tabs/tabs.ts';
 
 class App {
     constructor() {
-        // --------------------------------------------------------------------
-        // Search
-        // --------------------------------------------------------------------
+        // Header
 
         new Search();
+        new Modal();
 
-        // --------------------------------------------------------------------
-        // Hero Slider
-        // --------------------------------------------------------------------
+        // Content
 
         new HeroSlider();
-
-        // --------------------------------------------------------------------
-        // Tabs
-        // --------------------------------------------------------------------
-
         new Tabs();
-
-        // --------------------------------------------------------------------
-        // Scrollbar Slider
-        // --------------------------------------------------------------------
 
         const scrollbarSliderSelector = '.js-scrollbar-slider';
         const scrollbarSliders = document.querySelectorAll(
